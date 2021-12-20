@@ -39,6 +39,14 @@ class TestReport(common.HttpCase):
                 }
             )
         )
+        self.report_text = self.Model.create(
+            {
+                "name": "Test",
+                "report_type": "qweb-text",
+                "model": "res.partner",
+                "report_name": "base_report_to_printer.test",
+            }
+        )
         self.report_text_view = self.env["ir.ui.view"].create(
             {
                 "name": "Test",
