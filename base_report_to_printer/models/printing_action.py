@@ -18,6 +18,8 @@ class PrintingAction(models.Model):
     _name = "printing.action"
     _description = "Print Job Action"
 
+    _available_action_types = AVAILABLE_ACTION_TYPES
+
     name = fields.Char(required=True)
     action_type = fields.Selection(
         selection=AVAILABLE_ACTION_TYPES, string="Type", required=True
